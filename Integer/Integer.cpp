@@ -7,8 +7,8 @@ using namespace std;
 int Integer::getValue() {
 	return value;
 }
-void Integer::setValue(int v) {
-	value = v;
+void Integer::setValue(int value) {
+	this->value = value;
 }
 Integer Integer::add(Integer integer) {
 	Integer temp = (value + integer.value);
@@ -33,20 +33,13 @@ Integer Integer::pow(int n) {
 		res *= value;
 	}
 	res = value;
-	return value;
+	return Integer(value);
 }
 Integer Integer::mod(Integer integer) {
 	Integer temp = (value % integer.value);
 	return temp;
 }
 Integer Integer::oop() {
-	int temp = 0;
-	int num = getValue();
-	while (num > 0)
-	{
-		temp = temp * 10 + num % 10;
-		num /= 10;
-	}
-	setValue(temp);
-	return value;
+	Integer temp = getValue() *(-1);
+	return temp;
 }
